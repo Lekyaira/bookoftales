@@ -62,8 +62,7 @@ fn extensions() -> Option<Vec<String>> { None }
 /// Server configuration data
 #[derive(Clone, PartialEq, Deserialize)]
 pub struct ServerConfig {
-    pub blog: DBConfig,
-    pub users: DBConfig,
+    pub book: DBConfig,
     pub secret: String,
 }
 

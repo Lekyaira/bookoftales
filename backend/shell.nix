@@ -17,7 +17,9 @@ pkgs.mkShell {
   # C/C++ libraries go here.
   nativeBuildInputs = with pkgs; [
     rust_toolchain
-	 openssl.dev
+    openssl.dev
+    clang
+ 		gcc binutils lld
   ];
 
   # Other dependencies, cli tools, etc go here.

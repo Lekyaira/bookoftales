@@ -1,4 +1,3 @@
-use crate::auth;
 use rocket::{get, serde::json::Json};
 use rocket_okapi::{
     okapi::{schemars, schemars::JsonSchema},
@@ -8,19 +7,12 @@ use rocket_okapi::{
 
 pub fn get_routes() -> Vec<rocket::Route> {
     openapi_get_routes![
-        test_admin,
-        auth::login,
-        auth::logout,
-        auth::signup,
-        auth::create_admin,
-        auth::me,
-        auth::links,
-        auth::admin,
+        test_page,
     ]
 }
 
 #[openapi]
-#[get("/test-admin")]
-async fn test_admin(user: auth::AuthUser) -> Json<String> {
-    format!("You are logged in as admin. User id: {}", user.0).into()
+#[get("/test")]
+async fn test_page() -> Json<String> {
+    format!("Hello world!").into()
 }
