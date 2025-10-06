@@ -6,6 +6,8 @@ pkgs.mkShell {
 	# Other dependencies, cli tools, etc go here.
 	buildInputs = with pkgs; [
 		postgresql
+		sqlx-cli
+		jq
 	];
 
 	# Postgres
